@@ -274,6 +274,25 @@ void stopBackward(int delayTime)
   delay(delayTime);
 }
 
+void moveBackwardEncode(int number){
+  int count = 0;
+  int lastRight = 1,lastLeft = 1;
+  int countLeft = 0,countRight = 0;
+  while(count<=number){
+    moveBackward();
+    if(digitalRead(E_RIGHT)!=lastRight){
+      countRight++;
+      lastRight = digitalRead(E_RIGHT);
+    }
+    if(digitalRead(E_Left)!=lastLeft){
+      countLeft++;
+      lastLeft = digitalRead(E_Left);
+    }
+    count = (countLeft+countRight)/2;
+    delayMicroseconds(100);
+  }
+}
+
 void setup()
 {
 
@@ -407,12 +426,7 @@ void loop()
     }
     case 7:
     {
-      if(distances[2]>=100){
-        stopBackward(1000);
-        currentState++;
-        break;
-      }
-      moveBackward();
+      moveBackwardEncode(100);
       break;
     }
     case 8:
@@ -590,6 +604,64 @@ void loop()
       }
       moveForward();
       break;
+    }
+    case 29:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 30:
+    {
+       if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 31:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 32:
+    {
+       if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 33:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 34:
+    {
+     if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 35:
+    {
+      if(distances[2]<=100){
+        stopBackward(1000);
+
+      }
     }
   }
  
