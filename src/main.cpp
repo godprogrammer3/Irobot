@@ -19,7 +19,7 @@
 #define RIGHT_ADD_SPEED 10
 
 #define MAX_DISTANCE 200
-#define P 14
+#define P 12
 #define I 0
 #define D 5
 NewPing uRight(U_RIGHT_TRIG, U_RIGHT_ECHO, MAX_DISTANCE);
@@ -288,7 +288,7 @@ void setup()
   pinMode(E_RIGHT, INPUT);
 /*-----------------------------------------------------------------------------------------------------*/
   
- // Serial.begin(9600);
+  //Serial.begin(9600);
 
 /*---------------------------------------------------------------------------------------------------*/
 }
@@ -341,7 +341,7 @@ void loop()
     case 0:
     {
       PID2();
-      if (distances[1] < 150)
+      if (distances[1] < 180)
       {
         moveForward();
         if(distances[1] < 40){
