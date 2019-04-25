@@ -344,7 +344,7 @@ void loop()
       if (distances[1] < 180)
       {
         moveForward();
-        if(distances[1] < 40){
+        if(distances[1] <= 30){
           stopForward(1000);
           currentState++;
         }
@@ -362,7 +362,235 @@ void loop()
     }
     case 2:
     {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 3:
+    {
+      
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 4:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+     case 5:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 6:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 7:
+    {
+      if(distances[2]>=100){
+        stopBackward(1000);
+        currentState++;
+        break;
+      }
+      moveBackward();
+      break;
+    }
+    case 8:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 9:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+     }
+     moveForward();
+     break;
+    }
+    case 10:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 11:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 12:
+    {
+      turnLeft(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 13:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 14:
+    {
+      turnLeft(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 15:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 16:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 17:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 18:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 19:
+    {
+      turnLeft(8.5);
+      delay(500);
+      break;
+    }
+    case 20:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 21:
+    {
+      turnRight(8.5);
+      delay(500);
+      break;
+    }
+    case 22:
+    {
+       if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 23:
+    {
+      turnLeft(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 24:
+    {
+       if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
+      break;
+    }
+    case 25:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 26:
+    {
+      if(distances[1]<=180){
+        if(distances[1]<=30){
+          stopForward(1000);
+          currentState++;
+          break;
+        }
+      }
+      PID2();
+    }
+    case 27:
+    {
+      turnRight(8.5);
+      delay(500);
+      currentState++;
+      break;
+    }
+    case 28:
+    {
+      if(distances[1]<=30){
+        stopForward(1000);
+        currentState++;
+        break;
+      }
+      moveForward();
       break;
     }
   }
+ 
 }
